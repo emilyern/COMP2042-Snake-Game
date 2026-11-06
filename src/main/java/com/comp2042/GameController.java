@@ -143,6 +143,8 @@ public class GameController {
             return !this.key.equals(KeyCode.UP);
         }
 
+        return false;
+    }
     private void reset() {
 
         animation.jumpTo(Duration.ZERO);
