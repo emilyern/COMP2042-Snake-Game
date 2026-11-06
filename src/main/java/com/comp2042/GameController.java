@@ -142,6 +142,7 @@ public class GameController {
         if (key.equals(KeyCode.DOWN)) {
             return !this.key.equals(KeyCode.UP);
         }
+    }
 
     private void reset() {
 
