@@ -28,7 +28,7 @@ public class Game {
         this.powerUp = powerUp;
         width = x;
         height = y;
-        maxScore = 2;
+        maxScore = x * y - 2;
         this.powerUp = powerUp;
         if (height > 50) {
             multiplier = 10;
