@@ -64,7 +64,10 @@ public class GameController {
                 powerCoin();
                 game.incScore();
                 if (game.gameWon()) {
+                    stopAnimation();
                     gameView.drawGrid(coin, snek, obstacle, gameView.gc, false, 0);
+                    gameView.gameWon();
+                    gameView.updateScoreLabel();
                     return;
                 }
                 newCoin();
@@ -171,6 +174,11 @@ public class GameController {
 
         gameView.drawGrid(coin, snek, obstacle, gameView.gc, false, 0);
     }
+
+    private void stopAnimation() {
+        animation.stop();
+    }
+
 
     private void powerCoin() {
         animation.setRate(game.getSpeed());
