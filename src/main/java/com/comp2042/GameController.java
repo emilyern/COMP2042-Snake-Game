@@ -86,6 +86,11 @@ public class GameController {
     }));
 
     public void handle(KeyEvent event) {
+
+        if (game.gameWon() && event.getCode().isArrowKey()) {
+            return;
+        }
+
         if (event.getCode().isArrowKey()) animation.play();
 
         if (valKey(event.getCode()) && !keyPressed) {
