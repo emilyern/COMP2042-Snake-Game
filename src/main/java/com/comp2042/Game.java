@@ -62,6 +62,7 @@ public class Game {
 
         score = 0;
         scorePoints = 0;
+        maxScore = width * height - 2;
 
         System.out.println("maxScore AFTER restart: " + maxScore);
         System.out.println("Original maxScore: " + (width * height - 2));
