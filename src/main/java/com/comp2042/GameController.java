@@ -85,6 +85,13 @@ public class GameController {
         }
     }));
 
+    /**
+     * Handles keyboard input for snake movement and game controls.
+     * Processes direction changes, pausing, restarting, and display controls.
+     * Prevents arrow-key movement after the player wins the game.
+     *
+     * @param event the keyboard event received from the player
+     */
     public void handle(KeyEvent event) {
 
         if (game.gameWon() && event.getCode().isArrowKey()) {
