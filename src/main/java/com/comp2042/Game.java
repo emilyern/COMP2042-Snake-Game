@@ -58,14 +58,10 @@ public class Game {
     }
 
     public void resetScore() {
-        System.out.println("maxScore BEFORE restart: " + maxScore);
 
         score = 0;
         scorePoints = 0;
         maxScore = width * height - 2;
-
-        System.out.println("maxScore AFTER restart: " + maxScore);
-        System.out.println("Original maxScore: " + (width * height - 2));
     }
 
     public Color getColor() {
