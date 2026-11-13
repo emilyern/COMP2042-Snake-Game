@@ -187,6 +187,10 @@ public class GameController {
         gameView.drawGrid(coin, snek, obstacle, gameView.gc, false, 0);
     }
 
+    /**
+     * Stops the game's animation timeline.
+     * Used to prevent the snake from continuing to move after the player reaches the winning condition.
+     */
     private void stopAnimation() {
         animation.stop();
     }
