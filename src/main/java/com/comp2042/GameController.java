@@ -131,6 +131,13 @@ public class GameController {
     }
 
 
+    /**
+     * Validates the player's requested movement direction.
+     * Prevents the snake from reversing directly into the opposite direction.
+     *
+     * @param key the keyboard key pressed by the player
+     * @return true if the direction change is valid, otherwise false
+     */
     private boolean valKey(KeyCode key) {
         if (!key.isArrowKey()) {
             return false;
