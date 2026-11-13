@@ -201,6 +201,11 @@ public class GameController {
         game.addPoints(coin.getPoints());
     }
 
+
+    /**
+     * Generates a new coin for the game.
+     * Randomly selects a special coin type when power-ups are enabled, otherwise generates a normal coin.
+     */
     private void newCoin() {
         if (game.isPowerUp()) {
             Random rnd = new Random();
