@@ -161,6 +161,7 @@ public class GameController {
 
         animation.jumpTo(Duration.ZERO);
         animation.stop();
+        obstacle.reset();
 
         snek = new Snake(game.getWidth(), game.getHeight(), game.isNoBorder(), obstacle);
         coin = new Coin(game.getWidth(), game.getHeight(), snek, obstacle);
@@ -171,7 +172,6 @@ public class GameController {
         key = KeyCode.LEFT;
         lastKey = KeyCode.LEFT;
         keyPressed = false;
-        game.resetScore();
         obstacle.reset();
 
         gameView.gameWon();
