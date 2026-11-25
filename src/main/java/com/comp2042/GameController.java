@@ -169,6 +169,7 @@ public class GameController {
 
         animation.setRate(game.getSpeed());
         key = KeyCode.LEFT;
+        lastKey = KeyCode.LEFT;
         keyPressed = false;
         game.resetScore();
         obstacle.reset();
