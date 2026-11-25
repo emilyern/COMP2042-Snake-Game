@@ -22,12 +22,25 @@ public class Obstacle {
             return;
         }
         Random rnd = new Random();
-        Point p;
-        for (int i=0; i<amount; i++) {
-            do {
-                p = new Point(rnd.nextInt(x) , rnd.nextInt(y));
-            } while (coin.getPos().equals(p) || snek.getBody().contains(p) || snek.getHead().equals(p));
-            obstacles.add(p);
+        ArrayList<Point> availablePositions = new ArrayList<>();
+
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
+                Point p = new Point(i, j);
+
+                if (!coin.getPos().equals(p)
+                        && !snek.getBody().contains(p)
+                        && !snek.getHead().equals(p)
+                        && !obstacles.contains(p)) {
+
+                    availablePositions.add(p);
+                }
+            }
+        }
+
+        for (int i = 0; i < amount && !availablePositions.isEmpty(); i++) {
+            int index = rnd.nextInt(availablePositions.size());
+            obstacles.add(availablePositions.remove(index));
         }
     }
 
