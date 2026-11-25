@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Obstacle {
+    private static final int MAX_OBSTACLES = 50;
     private Color color = Color.BLACK;
     private ArrayList<Point> obstacles = new ArrayList<>();
     private int x;
@@ -18,9 +19,12 @@ public class Obstacle {
     }
 
     public void newObstacles(Snake snek, Coin coin, int amount) {
-        if (obstacles.size() > 50) {
+        if (obstacles.size() >= MAX_OBSTACLES) {
             return;
         }
+
+        int remainingCapacity = MAX_OBSTACLES - obstacles.size();
+        int obstaclesToAdd = Math.min(amount, remainingCapacity);
         Random rnd = new Random();
         ArrayList<Point> availablePositions = new ArrayList<>();
 
@@ -38,7 +42,7 @@ public class Obstacle {
             }
         }
 
-        for (int i = 0; i < amount && !availablePositions.isEmpty(); i++) {
+        for (int i = 0; i < obstaclesToAdd && !availablePositions.isEmpty(); i++) {
             int index = rnd.nextInt(availablePositions.size());
             obstacles.add(availablePositions.remove(index));
         }
